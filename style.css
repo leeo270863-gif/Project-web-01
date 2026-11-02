@@ -1,0 +1,115 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--profile-frame-pattern: repeating-linear-gradient(
+		135deg,
+		#e8795f 0 7px,
+		#f7c96a 7px 14px,
+		#4b9276 14px 21px,
+		#b8d7a8 21px 28px
+	);
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	padding: 24px;
+	background-color: #f2f5f2;
+	background-image:
+		radial-gradient(#cbd8d0 0.8px, transparent 0.8px),
+		linear-gradient(135deg, #fff5e3, #e5f3ed 55%, #fbe5dc);
+	background-size: 18px 18px, auto;
+	color: #23332d;
+	font-family: "Thonburi", "Leelawadee UI", sans-serif;
+}
+
+.page {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.profile {
+	width: min(100%, 380px);
+	overflow: hidden;
+	border: 9px solid transparent;
+	border-radius: 12px;
+	background:
+		linear-gradient(#fffefa, #fffefa) padding-box,
+		var(--profile-frame-pattern) border-box;
+	box-shadow: 0 16px 40px rgb(34 56 44 / 14%);
+}
+
+.profile__photo-frame {
+	padding: 10px;
+	background: var(--profile-frame-pattern);
+}
+
+.profile__image {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border: 3px solid #fffefa;
+	background: #dce5df;
+}
+
+.profile__details {
+	padding: 24px 28px 28px;
+}
+
+.profile__details h1 {
+	margin: 0 0 18px;
+	color: #1f563d;
+	font-size: 24px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.profile__details h1::after {
+	content: "";
+	display: block;
+	width: 54px;
+	height: 4px;
+	margin: 10px auto 0;
+	border-radius: 4px;
+	background: linear-gradient(90deg, #e8795f 0 34%, #f7c96a 34% 67%, #4b9276 67%);
+}
+
+.profile__details p {
+	display: grid;
+	grid-template-columns: 88px 1fr;
+	gap: 12px;
+	margin: 0;
+	padding: 12px 0;
+	border-top: 1px dashed #d9c8a9;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.profile__details p span {
+	color: #718078;
+}
+
+.profile__details p strong {
+	font-weight: 600;
+	overflow-wrap: anywhere;
+}
+
+.profile__details .profile__address strong {
+	font-weight: 400;
+}
+
+@media (max-width: 420px) {
+	body {
+		padding: 16px;
+	}
+
+	.profile__details {
+		padding: 20px;
+	}
+}
